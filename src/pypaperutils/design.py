@@ -10,6 +10,28 @@ colors and other design elements
 """
 
 import numpy as np
+import matplotlib.pyplot as plt
+
+
+def figure_for_latex(height, width=18.47987):
+    """Creates a figure with a given hight and width in cm 
+    and constrained layout. 
+    
+    Parameters
+    ----------    
+    height : float,
+        Figure height in cm.
+    width : float, optional
+        Figure width in cm. Default is 18.47987 for a typical A4 textwidth. 
+        
+    Returns
+    -------
+    figure
+        Matplotlib figure handle.  
+    """
+    cm = 1/2.54
+    return plt.figure(layout='constrained', figsize=(width*cm, height*cm))
+
 
 class TUDcolors:
     """Colors of the TU Delft corporate image as of 20-09-2023.
