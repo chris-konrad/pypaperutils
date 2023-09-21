@@ -30,3 +30,5 @@ plt.legend(bbox_to_anchor=(1.04, 1), loc="upper left")
 plt.subplots_adjust(right=0.7)
 
 plt.savefig("example_plot.png")
+
+

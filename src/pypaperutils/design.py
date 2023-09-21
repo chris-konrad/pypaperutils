@@ -11,7 +11,9 @@ colors and other design elements
 
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib
 
+from matplotlib.colors import LinearSegmentedColormap
 
 def figure_for_latex(height, width=18.47987):
     """Creates a figure with a given hight and width in cm 
@@ -53,7 +55,7 @@ class TUDcolors:
                (108, 194,  74),     #Lichtgroen
                (0,   155, 119))     #Donkergroen
     
-    COLORNAMES = ("cyaan", "donkerblauw", "turkoois", "blau", "paars", "roze",
+    COLORNAMES = ("cyaan", "donkerblauw", "turkoois", "blauw", "paars", "roze",
                   "framboos", "rood", "oranje", "geel", "lichtgroen", 
                   "donkergroen")
     
@@ -68,7 +70,7 @@ class TUDcolors:
         0 - "cyaan"
         1 - "donkerblauw"
         2 - "turkoois"
-        3 - "blau"
+        3 - "blauw"
         4 - "paars"
         5 - "roze",
         6 - "framboos"
@@ -123,3 +125,19 @@ class TUDcolors:
             rgbtriplets = rgbtriplets[0]
             
         return rgbtriplets
+    
+    def colormap(self, name="blue-to-yellow"):
+        
+        colormap_names = ["blue-to-yellow",]
+        
+        assert name in colormap_names, f'The parameter "name" has to be any of\
+             {colormap_names}, instead it was "{name}".'
+        
+        if name == 'blue-to-yellow':
+            cmp = LinearSegmentedColormap.from_list("blue-to-yellow",
+                                                    (self.get("donkerblauw"),
+                                                     self.get("blauw"),
+                                                     self.get("donkergroen"),
+                                                     self.get("lichtgroen"),
+                                                     self.get("geel")))
+        return cmp
