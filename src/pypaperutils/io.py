@@ -33,15 +33,13 @@ def export_to_pgf(fig, filename, dirname=None, save=True):
     None.
 
     """
-    
-    assert matplotlib.get_backend() == 'pgf', f'Set the matplotlib backend \
-    to "pgf" before plotting in order to export to .pgf. The current backend \
-    is "{matplotlib.get_backend()}".'
-    
-    if save:
+    if save:    
+        assert matplotlib.get_backend() == 'pgf', f'Set the matplotlib \
+        backend to "pgf" before plotting in order to export to .pgf. The \
+        current backend is "{matplotlib.get_backend()}".'
         
         if dirname is not None:
-            path = os.path.join(filename, dirname) + '.pgf'
+            path = os.path.join(dirname,filename) + '.pgf'
             if not os.path.exists(dirname):
                 os.makedirs()  
         else:
