@@ -11,7 +11,6 @@ colors and other design elements
 
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib
 
 from matplotlib.colors import LinearSegmentedColormap
 
