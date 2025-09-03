@@ -11,6 +11,7 @@ Export and import of figures and other elements
 
 import os
 import matplotlib
+  
 
 def export_to_pgf(fig, filename, dirname=None, save=True): 
     """Export a figure to pgf format so that latex may render text by itself.
