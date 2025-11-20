@@ -2,6 +2,8 @@ Pypaperutils - Useful functions for creating paper-ready figures in python
 ==============================
 
 A personal collection of funcions for creating nice figures that can be exported to latex. 
+- Colors of the TU Delft corporate image
+- more functions to come ...
 
 ![Example plot with colors of the TU Delft corporate design](./demo/example_plot.png)
 
@@ -14,7 +16,7 @@ The package is under development. It may contain bugs and sections of unused or 
 1. Clone this repository. 
    
    ```
-   git clone  https://github.com/chrismo-schmidt/cyclistsocialforce.git
+   git clone  https://github.com/chrismo-schmidt/pypaperutils.git
    ```
 
 2. Install the package and it's dependencies. Refer to `pyproject.toml` for an overview of the dependencies. 
@@ -41,6 +43,5 @@ This package is licensed under the terms of the [MIT license](https://github.co
 ├── LICENSE
 ├── README.md
 └── src
-    ├── export
     └── design
 ```
