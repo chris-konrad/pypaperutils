@@ -185,6 +185,7 @@ class TUDcolors:
                                 yellow.
             - "blue-to-red": A smooth gradient from blue over pink to red. 
             - "red-blue-red": A smooth gradient from blue over pink to red and back
+            - "colorwheel" : A colorful gradient for cirular color maps
             - color_name : A smooth gradient from white to the color indicated by the name. Must be any of COLORNAMES
         - Discrete maps
             - "line-plot-colors": A selection of 11 colors for line plots, 
@@ -204,7 +205,7 @@ class TUDcolors:
         """
         
         colormap_names = [
-            "blue-to-yellow", "line-plot-colors", "blue-to-red", "red-blue-red"
+            "blue-to-yellow", "line-plot-colors", "blue-to-red", "red-blue-red", "colorwheel"
         ] +  list(self.COLORNAMES)
 
         assert (
@@ -245,6 +246,20 @@ class TUDcolors:
                     self.get("blauw"),
                     self.get("roze"),
                     self.get("rood"),
+                ),
+            )
+        if name == "colorwheel":
+            cmp = LinearSegmentedColormap.from_list(
+                "colorwheel",
+                (
+                    self.get("blauw"),
+                    self.get("roze"),
+                    self.get("rood"),
+                    self.get("oranje"),
+                    self.get("geel"),
+                    self.get("lichtgroen"),
+                    self.get("cyaan"),
+                    self.get("blauw"),
                 ),
             )
 
