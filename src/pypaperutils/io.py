@@ -6,7 +6,7 @@ pypaperutils.io
 
 Export and import of figures and other elements
 
-@author: Christoph M. Schmidt
+@author: Christoph M. Konrad
 """
 
 import os

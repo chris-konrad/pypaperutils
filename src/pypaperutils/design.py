@@ -6,7 +6,7 @@ pypaperutils.design
 
 colors and other design elements
 
-@author: Christoph M. Schmidt
+@author: Christoph M. Konrad
 """
 
 import numpy as np

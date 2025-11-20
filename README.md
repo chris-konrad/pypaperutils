@@ -26,7 +26,7 @@ The package is under development. It may contain bugs and sections of unused or 
 
 ## Authors
 
-- Christoph M. Schmidt, c.m.schmidt@tudelft.nl
+- Christoph M. Konrad, c.m.konrad@tudelft.nl
 
 License
 --------------------

@@ -6,7 +6,7 @@ pypaperutils.measure
 
 simple measurements and tools to draw these measurements into figures
 
-@author: Christoph M. Schmidt
+@author: Christoph M. Konrad
 """
 
 import numpy as np
