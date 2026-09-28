@@ -173,6 +173,7 @@ class TUDcolors:
 
         return rgbtriplets
 
+
     def colormap(self, name="line-plot-colors"):
         """
         Return different color maps made of colors from the TU Delft color
@@ -186,6 +187,8 @@ class TUDcolors:
             - "blue-to-red": A smooth gradient from blue over pink to red. 
             - "red-blue-red": A smooth gradient from blue over pink to red and back
             - "colorwheel" : A colorful gradient for cirular color maps
+            - "red-yellow-green": A smooth gradient from red over yellow to green
+            - "red-black-cyan": A smooth gradient from red over black to cyan
             - color_name : A smooth gradient from white to the color indicated by the name. Must be any of COLORNAMES
         - Discrete maps
             - "line-plot-colors": A selection of 11 colors for line plots, 
@@ -205,13 +208,34 @@ class TUDcolors:
         """
         
         colormap_names = [
-            "blue-to-yellow", "line-plot-colors", "blue-to-red", "red-blue-red", "colorwheel"
+            "red-black-cyan", "red-yellow-green", "blue-to-yellow", "line-plot-colors", "blue-to-red", "red-blue-red", "colorwheel"
         ] +  list(self.COLORNAMES)
 
         assert (
             name in colormap_names
         ), f'The parameter "name" has to be any of\
              {colormap_names}, instead it was "{name}".'
+
+        if name == "red-yellow-green":
+            cmp = LinearSegmentedColormap.from_list(
+                "red-yellow-green",
+                (
+                    self.get("rood"),
+                    self.get("geel"),
+                    self.get("donkergroen"),
+                ),
+            )
+
+        if name == "red-black-cyan":
+            cmp = LinearSegmentedColormap.from_list(
+                "red-black-cyan",
+                (
+                    self.get("rood"),
+                    [0.0, 0.0, 0.0],
+                    self.get("cyaan"),
+                ),
+            )
+
 
         if name == "blue-to-yellow":
             cmp = LinearSegmentedColormap.from_list(
