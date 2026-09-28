@@ -1,5 +1,14 @@
-import os
+# -*- coding: utf-8 -*-
+"""
+pypaperutils.config
 
+Parse a config yaml for making paper and presentation figures and tables.
+
+@author: Christoph M. Konrad
+"""
+
+
+import os
 from pypaperutils.design import TUDcolors
 
 def merge_config_dicts(dict1, dict2):

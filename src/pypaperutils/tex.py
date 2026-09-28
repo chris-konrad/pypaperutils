@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+pypaperutils.config
+
+Export values as LaTeX commands, make LaTeX tables and add tex format commands to strings.
+
+@author: Christoph M. Konrad
+"""
+
 import os
 import datetime
 from pathlib import Path
