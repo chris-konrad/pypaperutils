@@ -50,6 +50,12 @@ def writetex(lines, config, tex_name, metadata={}, verbose=True):
             print(f"Wrote '{filepath}'.")
 
 
+def int_to_word(n):
+    if n>14:
+        raise NotImplementedError("Numbers larger 14 not supported")
+    return ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen'][n]
+
+
 def tex_bold(val):
     """Make val bold (mathmode.)
     """

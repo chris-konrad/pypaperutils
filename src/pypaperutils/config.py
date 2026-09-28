@@ -25,12 +25,6 @@ def merge_config_dicts(dict1, dict2):
     return result
 
 
-def int_to_word(n):
-    if n>14:
-        raise NotImplementedError("Numbers larger 14 not supported")
-    return ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen'][n]
-
-
 def parse_config(config, figurekey, presentation=False):
     """ Create a config dictionary fusing the "global_config" and the
     "figure_config" selected by figurekey. Recursively merges subdictionaries. 
