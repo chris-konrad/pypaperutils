@@ -9,9 +9,10 @@ Export and import of figures and other elements
 @author: Christoph M. Konrad
 """
 
+import sys
 import os
 import matplotlib
-import datetime
+from datetime import datetime
 from pathlib import Path
 from argparse import ArgumentParser
 

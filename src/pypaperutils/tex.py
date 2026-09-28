@@ -7,8 +7,9 @@ Export values as LaTeX commands, make LaTeX tables and add tex format commands t
 @author: Christoph M. Konrad
 """
 
+import sys
 import os
-import datetime
+from datetime import datetime
 from pathlib import Path
 
 from pypaperutils.io import make_fileheader 
@@ -32,7 +33,7 @@ def writetex(lines, config, tex_name, metadata={}, verbose=True):
         Activate verbose output, by default True
     """
     
-    filename = filename.rstrip(".tex")+".tex"
+    filename = tex_name.rstrip(".tex")+".tex"
     header = make_fileheader(filename, metadata=config['file_metadata'] | metadata)
     lines = header + lines
 
