@@ -1,0 +1,106 @@
+# EXAMPLE CONFIG ------------
+# This is a example config.yaml for use with pypaperutils.config. See makefig_template.py and maketab_template.py for usage. 
+# 
+# author: Christoph M. Konrad
+#
+# ------------------------------------------------------------------------------------------------------------------------------------
+# Global config. This defines defaults that will end up in the top-level (e.g. config['dir_data']) during parsing with parse_config().
+global_config:
+    dir_out_base: #the base directory that all output will be placed in 
+    dir_data: #the directory with the data that you want to show in figures/tables.
+    dir_results: #the directory with results that you want to show in figures/tables.
+    filename_values: valuecommands.tex  #name of the file with LaTeX value commands.
+    symbols:    #some symbols that I frequently use. 
+        phi:
+            label: '$\varphi$'
+            unit: '$~[\mathrm{^\circ}]$'
+            labelxunit: '$\varphi~[^\circ]$'
+        delta:
+            label: '$\delta$'
+            unit: '$~[\mathrm{^\circ}]$'
+            labelxunit: '$\delta~[^\circ]$'
+        dphi:
+            label: '$\dot{varphi}$'
+            unit: '$~[^\circ~\mathrm{s}^{-1}]$'
+            labelxunit: '$\dot{\varphi}~[^\circ~\mathrm{s}^{-1}]$'
+        ddelta:
+            label: '$\dot{\delta}$'
+            unit: '$~[^\circ~\mathrm{s}^{-1}]$'
+            labelxunit: '$\dot{\varphi}~[^\circ~\mathrm{s}^{-1}]$'
+        psi:
+            label: '$\psi$'
+            unit: '$~[\mathrm{^\circ}]$'
+            labelxunit: '$\psi~[^\circ]$'
+        dpsi:
+            label: '$\dot{\psi}$'
+            unit: '$~[^\circ~\mathrm{s}^{-1}]$'
+            labelxunit: '$\dot{psi}~[^\circ~\mathrm{s}^{-1}]$'
+        p_x:
+            label: '$x$'
+            unit: '$~[\mathrm{m}]$'
+            labelxunit: '$x~[\mathrm{m}]$'
+        p_y:
+            label: '$y$'
+            unit: '$~[\mathrm{m}]$'
+            labelxunit: '$y~[\mathrm{m}]$'
+        v_mean:
+            label: '$\bar{v}$'
+            unit: '$~[\mathrm{km}~\mathrm{h}^{-1}]$'
+            labelxunit: '$p\bar{v}~[\mathrm{km}~C]$'
+        time:
+            label: '$t$'
+            unit: '$~[\mathrm{s}]$'
+            labelxunit: '$t~[\mathrm{s}]$'
+        ttc:
+            label: '$\mathrm{TTC}_\mathrm{min}$'
+            unit: '$~[\mathrm{s}]$'
+            labelxunit: '$\mathrm{TTC}_\mathrm{min}~[\mathrm{s}]$'
+        pet:
+            label: '$\mathrm{PET}$'
+            unit: '$~[\mathrm{s}]$'
+            labelxunit: '$\mathrm{PET}~[\mathrm{s}]$'
+    #Some global presets for figures/tables in a paper or a presentation. During parsing, these will be 
+    #transferred to the top level (e.g. config['fig_dpi']), depending on parse_config(..., presentation=True/False)
+    paper:      
+        fig_ftype: '.png'
+        fig_dpi: 1000
+        fig_fontsizes: [6, 8]
+        fig_size_inches: [5,3]
+        subdir_out_doctype: 'paper'
+        textwidth_inches: 6.47699
+    presentation:
+        fig_ftype: '.png'
+        fig_dpi: 300
+        fig_fontsizes: [14, 16]
+        fig_size_inches: [10,6]
+        subdir_out_doctype: 'presentation'
+        textwidth_inches: 6.47699
+    subdir_out_floattype:
+        # Puts figures and tables in separated subfolders
+        tab: 'tables'
+        fig: 'figures'
+    # Color definitions. Define some colors that you may want to keep consistent throughout a paper.
+    # This gets turned into the RGB triplets corresponding to color strings during parsing with parse_config. 
+    # Only matplotlib color strings, pypaperutils.design.TUDcolors color strings and HTML colors are allowed. 
+    colordef_data: 'cyaan'
+    colordef_model: 'paars'
+    colordef_highlight: 'rood'
+    # Some metadata that is appended to every file. Add more fields if required. 
+    file_metadata:
+        author:     #put your name here
+        license:    #choose any license
+# -------------------------------------------------------------------------------------------------------------------
+# Figure-specific config. This overwrites any defaults defined in global_config. Fields will end up in the top-level 
+# (e.g. config['dir_data']) during parsing with parse_config(). Pass the key (e.g., fig_template) of a specific figure 
+# to select which figure-specific config is loaded by parse_config().
+figure_config:
+    fig_template:
+        # define styles for this figure. They will end up at he toplevel (e.g., config['linewidth'])
+        linewidth: 3
+        # Styles may overwrite things that are already defined in global_config and may depend on the doc type 
+        # (paper/presentation)
+        paper:
+            # This updates config['fig_size_inches']. Conversion is based on textwidth_inches
+            fig_size_relative: [0.75, 0.33]
+        presentation:
+            fig_size_relative: [0.75, 0.33]
