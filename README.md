@@ -4,7 +4,7 @@ Pypaperutils - Useful functions for creating paper-ready figures in python
 A personal collection of funcions for creating nice figures that can be exported to latex. 
 - Colors of the TU Delft corporate image
 - Export values as tex-commands and create tex-tables from Python lists.
-- Parse a config.yaml to conveniently maintain constant format across figures created by multiple scripts. 
+- Parse a config.yaml to conveniently maintain constant format across figures and table created by multiple scripts. 
 
 ![Example plot with colors of the TU Delft corporate design](./demo/example_plot.png)
 
@@ -26,6 +26,13 @@ The package is under development. It may contain bugs and sections of unused or 
    cd ./pypaperutils
    pip install . 
    ```
+
+## Usage
+
+For using the TU Delft color scheme, have a look at `demo/demo_tudcolors.yaml`
+
+For using tex-exports, plotting and making tables for LaTeX papers and presentations, have a look at 'demo/makefig_template.py', 'demo/maketab_template.py', and the corresponding `demo/config.yaml`.
+
 
 ## Authors
 
