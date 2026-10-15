@@ -14,6 +14,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 
 from matplotlib.colors import LinearSegmentedColormap, ListedColormap
+from matplotlib.collections import LineCollection
 
 
 def config_matplotlib_for_latex(
@@ -313,3 +314,18 @@ class TUDcolors:
                 ), name=name)
         
         return cmp
+    
+
+def plot_multicolor(ax, x, y, s, cmap=TUDcolors().colormap("blue-to-yellow"), norm=None, **kwargs):
+    """ Create a multicolored line. The line color is determined by s."""
+
+    points = np.array([x, y]).T.reshape(-1, 1, 2)
+    segments = np.concatenate([points[:-1], points[1:]], axis=1)
+
+    lc = LineCollection(segments, cmap=cmap, norm=norm, **kwargs)
+    lc.set_array(s)
+
+    ax.add_collection(lc)
+    ax.autoscale()
+
+    return lc
