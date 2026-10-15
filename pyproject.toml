@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "pypaperutils"
 description = "Useful functions for creating paper-ready figures in python"
 readme = "README.md"
-version = "1.2.2"
+version = "1.3.0"
 license = {file = "LICENSE"}
 authors = [
 	{name = "Christoph M. Konrad", email = "c.m.konrad@tudelft.nl"}
@@ -16,6 +16,7 @@ dependencies = [
 	"numpy",
 	"matplotlib",
 	"pandas",
+	"datetime",
 ]
 	
 [tool.setuptools.packages.find]
